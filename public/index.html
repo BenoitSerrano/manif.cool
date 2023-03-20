@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>La manif', c’est cool</title>
+
+    <meta property="og:title" content="La manif', cest cool !" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr-FR" />
+    <meta property="og:url" content="https://manif.cool/" />
+    <meta property="og:image" content="https://manif.cool/assets/cover.png" />
+    <meta property="og:description" content="Ça sert à quoi de manifester ? Comment je fais ?" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description"
+        content="Ça sert à quoi de manifester ? Comment je fais ? Toutes les infos utiles sont à retrouver sur manif.cool">
+    <meta name="twitter:title" content="La manif', c’est cool.">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        h1 {
+            margin-top: 120px;
+            font-size: 80px;
+            line-height: 1.1;
+            font-weight: 400;
+        }
+
+        h1 span {
+            display: block;
+        }
+
+        h1,
+        details,
+        footer,
+        .see-also {
+            margin-left: 140px;
+            max-width: 600px;
+        }
+
+        .see-also {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 40px;
+        }
+
+        .cta-title {
+            color: grey;
+            font-size: 14px;
+            padding: 6px 8px 4px 0;
+        }
+
+        .cta-title::after {
+            content: " →";
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: rgb(233, 238, 241);
+            border-radius: 20px;
+            color: black;
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 6px 16px 4px;
+            transition: background-color ease-in-out .2s, color ease-in-out .2s;
+        }
+
+        .cta:hover,
+        .cta:focus {
+            background-color: #f8bb52;
+            background-color: var(--bg-hover-color);
+        }
+
+        @media screen and (max-width: 375px) {
+            .cta {
+                font-size: 18px;
+            }
+        }
+
+        summary:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 0, 0, 0.7);
+        }
+
+        details {
+            margin-bottom: 30px;
+        }
+
+        details summary {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 740px) {
+            h1 {
+                font-size: 60px;
+                margin-top: 80px;
+            }
+
+            h1,
+            details,
+            .see-also,
+            footer {
+                margin-left: 5px;
+            }
+
+            .see-also {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            .cta-title {
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-title::after {
+                display: none;
+            }
+        }
+
+        details section {
+            margin-left: 20px;
+        }
+
+        p,
+        ul {
+            line-height: 1.5;
+        }
+
+        li {
+            margin-top: 1rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            margin-bottom: 80px;
+            color: dimgrey;
+            font-size: 12px;
+        }
+
+        footer a:link,
+        footer a:visited {
+            color: inherit;
+        }
+
+        /* Colors */
+
+        h1 strong {
+            position: relative;
+        }
+
+        h1 strong,
+        summary strong {
+            text-decoration-skip-ink: none;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #FFE70F;
+            text-decoration-thickness: 0.2em;
+            text-underline-offset: -0.1em;
+        }
+
+        h1>strong {
+            text-decoration-color: #0FF1FF;
+        }
+
+        summary strong {
+            text-decoration-thickness: 0.3em;
+            text-underline-offset: -0.08em;
+            text-decoration-color: #91FF9C;
+        }
+
+        details:nth-of-type(6n) summary strong,
+        .see-also a:nth-of-type(6n) {
+            text-decoration-color: #FFCC91;
+            --bg-hover-color: #FFCC91;
+        }
+
+        details:nth-of-type(6n + 1) summary strong,
+        .see-also a:nth-of-type(6n + 1) {
+            text-decoration-color: #D5FF91;
+            --bg-hover-color: #D5FF91;
+        }
+
+        details:nth-of-type(6n + 2) summary strong,
+        .see-also a:nth-of-type(6n + 2) {
+            text-decoration-color: #91FF9C;
+            --bg-hover-color: #91FF9C;
+        }
+
+        details:nth-of-type(6n + 3) summary strong,
+        .see-also a:nth-of-type(6n + 3) {
+            text-decoration-color: #ECA2FF;
+            --bg-hover-color: #ECA2FF;
+        }
+
+        details:nth-of-type(6n + 4) summary strong,
+        .see-also a:nth-of-type(6n + 4) {
+            text-decoration-color: #FFA2A2;
+            --bg-hover-color: #FFA2A2;
+        }
+
+        details:nth-of-type(6n + 5) summary strong,
+        .see-also a:nth-of-type(6n + 5) {
+            text-decoration-color: #FDDA7F;
+            --bg-hover-color: #FDDA7F;
+        }
+
+        #legal {
+            display: none;
+        }
+
+        #legal:target {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #legal:target .dialog {
+            display: block;
+            position: absolute;
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 80px;
+            top: 0;
+            box-sizing: border-box;
+            z-index: 2;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Smile */
+        .cool::after {
+            content: "";
+            display: block;
+            width: 43%;
+            left: 34%;
+            background-size: contain;
+            position: absolute;
+            background-image: url("data:image/svg+xml,%3Csvg width='65' height='26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 3c11 23 44 23 55 0' stroke='%23000' stroke-width='11'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            bottom: -23%;
+            height: 50%;
+            background-position: bottom center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1><span>La <strong>manif'</strong>,</span> c’est <strong class="cool">cool</strong>.</h1>
+
+    <details>
+        <summary><strong>Pourquoi</strong> il y a manifestation ?</summary>
+
+        <section>
+            <p>
+                Les syndicats <a
+                    href="https://solidaires.org/media/documents/Communiqu%C3%A9_de_lintersyndicale_le_16_mars_2023.pdf">appellent
+                    à la manifestation</a> le jeudi 23 mars 2023 pour lutter contre la réforme des retraites qui reporterait
+                l’âge légal de départ à la retraite à 64 ans, ainsi qu’un allongement accéléré de la durée de
+                cotisation.
+            </p>
+            <p>
+                De nombreux autres mouvements de grèves reconductibles sont également annoncés par plusieurs syndicats,
+                notamment dans les <a
+                    href="https://www.cgtservicespublics.fr/les-luttes/actualite-des-luttes-2023/preavis-de-greve/article/la-federation-cgt-des-services-publics-depose-un-preavis-de-greve-pour-les-24384">services
+                    publics</a> (tout le mois de mars), l’<a
+                    href="https://www.sudeducation.org/agir/preavis-de-greve/">éducation</a> (jusqu’au 20 mai) et de
+                l’<a
+                    href="https://solidairesinformatique.org/2023/03/16/reforme-des-retraites-bloquons-la-france/">informatique</a>
+                (jusqu’au 26 mars).
+            </p>
+            <p>
+                Renseigne-toi sur les détails de cette réforme considérée par les syndicats comme injuste et
+                injustifiée sur <a href="https://64anscestnon.org/s-informer-sur-la-reforme-des-retraites/">
+                    64anscestnon.org</a>.
+            </p>
+        </section>
+    </details>
+
+    <details>
+        <summary><strong>Ça sert encore à quelque chose</strong>, maintenant que la motion de censure est rejetée ?</summary>
+        <section>
+            <p>
+                Oui ! La loi peut être votée, promulguée (c'est-à-dire signée par le Président de la République), puis être abrogée.
+                Ça a été le cas avec le <a href="https://blogs.mediapart.fr/robi-morder/blog/170323/un-texte-adopte-et-promulgue-peut-etre-retire-la-preuve-par-le-cpe">Contrat Première Embauche en 2006</a> : les bloquages étudiants, l'impopularité du projet, l'ampleur des manifestations avaient contraint le Président à revenir sur le projet de loi, pour finalement décider de l'abandonner.
+            </p>
+        </section>
+    </details>
+
+    <details>
+        <summary><strong>Ce n'est pas trop risqué</strong>, d'aller manifester ?</summary>
+        <section>
+            <p>Si tu n'as jamais manifesté ou que tu crains d'être trop proche de conflits physiques, n'hésite pas à te rapprocher des groupes de grands syndicats (CGT, Solidaires, CFDT, FO...) : ils sont souvent habitués à manifester et gérer des situations compliquées.</p>
+        </section>
+    </details>
+
+    <details>
+        <summary><strong>Dois-je prendre des précautions</strong> avant de m'y rendre ?</summary>
+        <section>
+            <p>Si tu souhaites éviter les conflits physiques avec les forces de l'ordre, il y a bien peu de chances que tu te retrouves en garde à vue. Si tu préfères quand même prendre des précautions, tu peux :
+                <ul>
+                    <li>prendre avec toi ta carte d'identité. Si les forces de l'ordre souhaitent vérifier ton identité et que tu ne peux la prouver, ils sont en droit de te retenir jusqu'à 4 heures, le temps de faire les vérifications nécessaires.</li>
+                    <li>préparer tes <em>garanties de représentations</em> : c'est un ensemble de pièces utiles en cas de <em>demande de mise en détention provisoire</em>. En gros, elles attestent que tu ne tentera pas de t'enfuir du pays s'ils te laissent sortir de garde à vue. Stocke donc sur une clef USB ou envoie à un proche tes contrat de travail, justificatif de domicile, attestation pôle emploi, preuve d'engagement associatif, bref, tout ce qui prouve que tu as une vie locale.</li>
+                    <li>consulter <a href="https://www.service-public.fr/particuliers/vosdroits/F14837">tes droits</a> lors de la garde à vue. Pour résumer, tu as le droit de contacter ou faire contacter un avocat, de te taire jusqu'à son arrivée, de ne signer aucun document si tu n'en approuves pas les termes, de voir un médecin (c'est très recommandé).</li>
+                </ul>
+            </p>
+        </section>
+    </details>
+
+    <div class="see-also">
+        <span class="cta-title">Outils</span>
+        <a class="cta" href="https://greve.cool/">
+            Pourquoi la grève ?
+        </a>
+        <a class="cta" href="https://nosretraites-simulateur-cas-types.netlify.app/">
+            Simuler les effets sur ma retraite
+        </a>
+        <a class="cta"
+            href="https://www.change.org/p/retraites-non-%C3%A0-cette-r%C3%A9forme-injuste-et-brutale-reformesdesretraites">
+            Signer la pétition des syndicats
+        </a>
+        <a class="cta" href="https://www.compteurdegreve.fr/">
+            Faire +1 sur le compteur de grève
+        </a>
+        <a class="cta" href="https://www.caisse-solidarite.fr/">
+            Donner à une caisse de solidarité
+        </a>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://manif.cool/">manif.cool</a> – Une page garantie sans trackers – Créée par quelqu'un
+            qui avait envie de convaincre ses ami·e·s de venir en manifestation avec lui.
+        </p>
+        <p><a href="#legal">Mentions légales</a></p>
+        <p>
+            <a href="https://github.com/BenoitSerrano/manif.cool">
+                Une idée, une remarque ?
+            </a>
+        </p>
+    </footer>
+
+    <div id="legal">
+        <div class="dialog">
+            <p>
+                Ce site internet personnel, réalisé par un particulier et sans lien avec des représentations syndicales,
+                est hébergé par l’entreprise<br>
+                Scalingo SAS<br>
+                3 place de Haguenau<br>
+                67000 Strasbourg - FRANCE<br>
+                SIRET 80866548300018 SARL<br>
+                222-224 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand.
+            </p>
+            <p>
+                La mise en page, le design et le concept sont directement tirés de <a href="https://greve.cool">greve.cool</a>.
+            </p>
+            <p>
+                Il ne pose pas de cookies, ni utilise vos données personnelles.
+                <small>(<a href="#">fermer</a>)</small>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
