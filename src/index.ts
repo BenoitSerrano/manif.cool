@@ -23,6 +23,17 @@ async function runApp() {
         next();
     });
 
+    app.get('/count', async (req, res) => {
+        try {
+            const visitorsCount = await visitorUseCases.countVisitors();
+            res.send(`${visitorsCount}`);
+            return;
+        } catch (error) {
+            console.error(error);
+            res.sendStatus(500);
+        }
+    });
+
     app.use(express.static('public'));
 
     app.listen(config.SERVER_PORT, () => {
