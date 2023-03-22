@@ -391,6 +391,9 @@
             <a class="cta" href="https://www.caisse-solidarite.fr/">
                 Donner à une caisse de solidarité
             </a>
+            <a class="cta" href="" id="copy-url-button" onclick="copyUrlToClipboard()"
+                >Copier l'adresse du site pour envoyer aux potos
+            </a>
             <a class="cta" href="./garde-a-vue.html"> Se renseigner sur la garde à vue </a>
         </div>
 
@@ -427,5 +430,14 @@
                 </p>
             </div>
         </div>
+        <script>
+            function copyUrlToClipboard() {
+                event.preventDefault();
+                navigator.clipboard.writeText('https://manif.cool');
+
+                const button = document.getElementById('copy-url-button').firstChild;
+                button.data = 'Adresse du site copiée ✅';
+            }
+        </script>
     </body>
 </html>
